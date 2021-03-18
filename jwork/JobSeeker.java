@@ -1,67 +1,126 @@
-
 /**
- * Write a description of class Job here.
+ * Write a description of class JWork here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Philipus Kristian Renaldy)
+ * @version (18 - 3 - 2021)
  */
-public class JobSeeker
+public class Jobseeker
 {
-    // instance variables - replace the example below with your own
+    // instance variables dari class jobseeker
     private int id;
     private String name;
     private String email;
     private String password;
     private String joinDate;
-    
 
     /**
-     * Constructor for objects of class Job
+     * Constructor for objects of class Jobseeker
+     * @param id berisi data id pendaftar
+     * @param name berisi data nama pendaftar
+     * @param email berisi data email pendaftar
+     * @param phoneNumber berisi data password pendaftar
+     * @param location berisi data waktu pendaftar
      */
-    public JobSeeker()
+    public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
-        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
+       * method ini digunakan untuk mengambil data id pendaftar
+       * @param id 
+       * @return void
+       */
+    public int getId()
     {
-        return 0;
+        return this.id;
     }
-    public static String getName()
+    /**
+       * method ini digunakan untuk mengambil data nama pendaftar
+       * @param name 
+       * @return void
+       */
+    public String getName()
     {
-        return "oop";
+        return this.name;
     }
-    public static String getEmail()
+    /**
+       * method ini digunakan untuk mengambil data email pendaftar
+       * @param email 
+       * @return void
+       */
+    public String getEmail()
     {
-        return "oop";
+        return this.email;
     }
-    public static String getPassword()
+    /**
+       * method ini digunakan untuk mengambil data password pendaftar
+       * @param password 
+       * @return void
+       */
+    public String getPassword()
     {
-        return "oop";
+        return this.password;
     }
-     public static String joinDate()
+    /**
+       * method ini digunakan untuk mengambil data waktu pendaftar
+       * @param joinDate
+       * @return void
+       */
+     public String getJoinDate()
     {
-        return "oop";
+        return this.joinDate;
     }
-    public static void setId(int id)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada id pendaftar
+       * @param id 
+       */
+    public void setId(int id)
     {
+        this.id = id;
     }
-    public static void setName(String Name)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada nama pendaftar
+       * @param name 
+       */
+    public void setName(String name)
     {
+        this.name = name;
     }
-    public static void setEmail(String email)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada email pendaftar
+       * @param email
+       */
+    public void setEmail(String email)
     {
+        this.email = email;
     }
-    public static void setPassword(String password)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada password pendaftar
+       * @param password
+       */
+    public void setPassword(String password)
     {
+        this.password = password;
     }
-    public static void setJoinDate(String joinDate)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada waktu pendaftar
+       * @param joinDate
+       */
+    public void setJoinDate(String joinDate)
     {
+        this.joinDate = joinDate;
+    }
+    /**
+       * method ini digunakan untuk melakukan output tulisan yang merujuk pada nama pendaftar
+       * @param getName 
+       */
+    public void printData()
+    {
+        System.out.println(getName());
     }
 }

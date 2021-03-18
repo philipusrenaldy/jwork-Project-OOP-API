@@ -1,64 +1,122 @@
-
 /**
- * Write a description of class Job here.
+ * Write a description of class JWork here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Philipus Kristian Renaldy)
+ * @version (18 - 3 - 2021)
  */
 public class Job
 {
-    // instance variables - replace the example below with your own
+    // instance variables dari class Job
     private int id;
     private String name;
     private int fee;
     private String category;
-
+    private Recruiter recruiter;
+    
     /**
      * Constructor for objects of class Job
+     * @param id berisi data id job
+     * @param name berisi data nama job
+     * @param fee berisi data fee job
+     * @param category berisi data kategori job
+     * @param Recruiter merujuk pada list Recruiter
      */
-    public Job()
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
-        // initialise instance variables
+        this.id = id;
+        this.recruiter = recruiter;
+        this.name = name;
+        this.fee = fee;
+        this.category = category;
     }
- 
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
+       * method ini digunakan untuk mengambil data id job
+       * @param id 
+       * @return void
+       */
+    public int getId()
     {
-        return 0;
+        return id;
     }
-    public static String getName()
+    /**
+       * method ini digunakan untuk mengambil data nama job
+       * @param name 
+       * @return void
+       */
+    public String getName()
     {
-        return "oop";
+        return name;
     }
-    public static int getFee()
+    /**
+       * method ini digunakan untuk mengambil data fee job
+       * @param fee 
+       * @return void
+       */
+    public int getFee()
     {
-        return 0;
+        return fee;
     }
-    public static String getCategory()
+    /**
+       * method ini digunakan untuk mengambil data kategori job
+       * @param category 
+       * @return void
+       */
+    public String getCategory()
     {
-        return "oop";
+        return category;
     }
-    public static void setId(int id)
+    /**
+       * method ini digunakan untuk mengambil data recruiter
+       * @param recruiter 
+       * @return void
+       */
+    public Recruiter getRecruiter()
     {
-       
+        return recruiter;
     }
-    public static void setName(String name)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada id job
+       * @param id 
+       */
+    public void setId(int id)
     {
-       
+       this.id = id;
     }
-    public static void setFee(int fee)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada nama job
+       * @param name 
+       */
+    public void setName(String name)
     {
-       
+       this.name = name;
     }
-    public static void setCategory(String category)
+    /**
+       * method ini digunakan untuk melakukan set nilai pada recruiter
+       * @param recruiter 
+       */
+    public void setRecruiter(Recruiter recruiter)
+    {
+       this.recruiter = recruiter;
+    }
+    /**
+       * method ini digunakan untuk melakukan set nilai pada fee job
+       * @param fee 
+       */
+    public void setFee(int fee)
+    {
+        this.fee = fee;
+    }
+    /**
+       * method ini digunakan untuk melakukan set nilai pada kategori job
+       * @param category 
+       */
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+    public void printData()
     {
         
     }
-    
-    
 }

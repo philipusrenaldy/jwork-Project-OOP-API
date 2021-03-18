@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatabaseJob
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ JWork\ here.\r\n\r\n\ @author\ (Philipus\ Kristian\ Renaldy)\r\n\ @version\ (18\ -\ 3\ -\ 2021)\r\n
+comment1.params=
+comment1.target=DatabaseJob()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseJob\r\n\ @param\ listJob\ berisi\ total\ Job\r\n
+comment2.params=listJob
+comment2.target=DatabaseJob(java.lang.String[])
+comment2.text=\r\n\ method\ ini\ digunakan\ untuk\ mengambil\ data\ job\r\n\ @param\ listJob\ berisi\ total\ Job\r\n
+comment3.params=job
+comment3.target=boolean\ addJob(Job)
+comment3.text=\r\n\ method\ ini\ digunakan\ untuk\ mengisi\ data\ job\r\n\ @param\ listJob\ berisi\ total\ Job\r\n\ @return\ false\r\n
+comment4.params=job
+comment4.target=boolean\ remove(Job)
+comment4.text=\r\n\ method\ ini\ digunakan\ untuk\ menghapus\ data\ job\r\n\ @param\ listJob\ berisi\ total\ Job\r\n\ @return\ false\r\n
+comment5.params=
+comment5.target=Job\ getJob()
+comment5.text=\r\n\ method\ ini\ digunakan\ untuk\ mengambil\ data\ job\r\n\ @param\ job\ \r\n\ @return\ null\r\n
+comment6.params=
+comment6.target=java.lang.String[]\ getListJob()
+comment6.text=\r\n\ method\ ini\ digunakan\ untuk\ mengambil\ data\ joblist\r\n\ @param\ listJob\ \r\n\ @return\ void\r\n
+numComments=7
