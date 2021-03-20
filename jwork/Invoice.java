@@ -117,6 +117,6 @@ public class Invoice
     }
     public void printData()
     {
-    
+        System.out.println(getTotalFee());
     }
 }

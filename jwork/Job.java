@@ -117,6 +117,6 @@ public class Job
     }
     public void printData()
     {
-        
+        System.out.println(getName()); 
     }
 }
