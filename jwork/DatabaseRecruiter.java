@@ -1,42 +1,49 @@
 
 /**
- * Write a description of class JWork here.
+ * Write a description of class DatabaseRecruiter here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (19 - 3 - 2021)
+ * @version (25 - 3 - 2021)
  */
 public class DatabaseRecruiter
 {
     // instance variables - replace the example below with your own
-    private String[] listRecruiter;
+    static private String[] listRecruiter;
 
     /**
-     * Constructor for objects of class DatabaseRecruiter
+     * method menambahkan recruiter
+     * @param recruiter
+     * @return boolean
      */
-    public DatabaseRecruiter()
-    {
-        listRecruiter = new String[100];
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public boolean addRecruiter(Recruiter recruiter)
+    public static boolean addRecruiter(Recruiter recruiter)
     {
         return false;
     }
-    public boolean removeRecruiter(Recruiter recruiter)
+    
+    /**
+     * method menghapus recruiter
+     * @param recruiter
+     * @return boolean
+     */
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
         return false;
     }
-    public Recruiter getRecruiter()
+    
+    /**
+     * method mendapatkan recuiter
+     * @return null
+     */
+    public static Recruiter getRecruiter()
     {
         return null;
     }
-    public String[] getListRecruiter()
+    
+    /**
+     * method mendapatkan listrecuiter
+     * @return String[]
+     */
+    public static String[] getListRecruiter()
     {
         return listRecruiter;
     }

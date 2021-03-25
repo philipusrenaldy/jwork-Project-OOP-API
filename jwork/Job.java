@@ -1,8 +1,8 @@
 /**
- * Write a description of class JWork here.
+ * Write a description of class Job here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (18 - 3 - 2021)
+ * @version (25 - 3 - 2021)
  */
 public class Job
 {
@@ -10,8 +10,8 @@ public class Job
     private int id;
     private String name;
     private int fee;
-    private String category;
     private Recruiter recruiter;
+    private JobCategory category;
     
     /**
      * Constructor for objects of class Job
@@ -21,7 +21,7 @@ public class Job
      * @param category berisi data kategori job
      * @param Recruiter merujuk pada list Recruiter
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         this.id = id;
         this.recruiter = recruiter;
@@ -62,7 +62,7 @@ public class Job
        * @param category 
        * @return void
        */
-    public String getCategory()
+    public JobCategory getCategory()
     {
         return category;
     }
@@ -111,12 +111,18 @@ public class Job
        * method ini digunakan untuk melakukan set nilai pada kategori job
        * @param category 
        */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category;
     }
     public void printData()
     {
-        System.out.println(getName()); 
+        System.out.println("===================== JOB =====================");
+        System.out.print("ID: " + id + " \n");
+        System.out.print("Name: " + name + " \n");
+        System.out.print("Recruiter: " + recruiter.getName() + " \n");
+        System.out.print("City: " + recruiter.getLocation().getCity() + " \n");
+        System.out.print("Fee: " + fee + " \n");
+        System.out.print("Category: " + category + " \n");
     }
 }

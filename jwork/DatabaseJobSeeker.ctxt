@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=DatabaseJobSeeker
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseJobSeeker\ here.\r\n\r\n\ @author\ Philipus\ Kristian\ Renaldy\r\n\ @version\ 25-3-2021\r\n
+comment1.params=jobseeker
+comment1.target=boolean\ addJobseeker(Jobseeker)
+comment2.params=jobseeker
+comment2.target=boolean\ removeJobseeker(Jobseeker)
+comment3.params=
+comment3.target=Job\ getJobseeker()
+comment4.params=
+comment4.target=java.lang.String[]\ getListJobseeker()
+numComments=5
