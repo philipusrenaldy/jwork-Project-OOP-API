@@ -3,7 +3,7 @@
  * Enumeration class JobCategory - write a description of the enum class here
  *
  * @author Philipus Kristian Renaldy
- * @version 25-3-2021
+ * @version 25 - 3 - 2021
  */
 public enum JobCategory {
     WebDeveloper("Web Developer"), FrontEnd("Front End"), BackEnd("Back End"), 

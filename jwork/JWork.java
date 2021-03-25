@@ -2,8 +2,8 @@
 /**
  * Write a description of class JWork here.
  *
- * @author (Philipus Kristian Renaldy)
- * @version (25 - 3 - 2021)
+ * @author Philipus Kristian Renaldy
+ * @version 25 - 3 - 2021
  */
 public class JWork
 {

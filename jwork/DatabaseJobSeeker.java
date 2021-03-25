@@ -3,7 +3,7 @@
  * Write a description of class DatabaseJobSeeker here.
  *
  * @author Philipus Kristian Renaldy
- * @version 25-3-2021
+ * @version 25 - 3 - 2021
  */
 public class DatabaseJobSeeker
 {
