@@ -1,8 +1,9 @@
+
 /**
  * Write a description of class JWork here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (18 - 3 - 2021)
+ * @version (27 - 3 - 2021)
  */
 public class Invoice
 {
@@ -12,6 +13,8 @@ public class Invoice
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /**
      * Constructor for objects of class Invoice
@@ -21,13 +24,16 @@ public class Invoice
      * @param totalFee berisi data harga invoice
      * @param jobseeker merujuk pada list jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker,
+        PaymentType paymentType,InvoiceStatus status)
     {
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
     
     /**
@@ -115,8 +121,48 @@ public class Invoice
     {
         this.jobseeker = jobseeker;
     }
+    /**
+       * method ini digunakan untuk mengambil data jobseeker invoice
+       * @param PaymentType 
+       * @return void
+       */
+    public PaymentType getPaymentType() 
+    {
+       return paymentType;
+    }
+      /**
+         * method ini digunakan untuk melakukan set nilai pada jobseeker invoice
+         * @param PaymentType
+         */
+    public void setPaymentType(PaymentType paymentType) 
+    {
+        this.paymentType = paymentType;
+    }
+    /**
+       * method ini digunakan untuk mengambil data jobseeker invoice
+       * @param InvoiceStatus 
+       * @return void
+        */
+    public InvoiceStatus getInvoiceStatus() 
+    {
+        return status;
+    }
+    /**
+        * method ini digunakan untuk melakukan set nilai pada jobseeker invoice
+        * @param InvoiceStatus
+        */
+    public void setInvoiceStatus(InvoiceStatus status) 
+    {
+       this.status = status;
+    }
     public void printData()
     {
-        System.out.println(getTotalFee());
+        System.out.println("===================== Invoice =====================");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " + date);
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Fee: " + totalFee);
+        System.out.println("Status: " + status);
     }
 }
