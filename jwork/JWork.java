@@ -3,7 +3,7 @@
  * Write a description of class JWork here.
  *
  * @author Philipus Kristian Renaldy
- * @version 1 - 4 - 2021
+ * @version 3 - 4 - 2021
  */
 public class JWork
 {
@@ -15,13 +15,20 @@ public class JWork
         Job job2 = new Job(1, "Mobile Development", recruiter1, 100000, JobCategory.FrontEnd);
         Jobseeker jobseeker1 = new Jobseeker(3, "BlueBlue", "blublu@gmail.com", "secret", "27/3/2021");
         
-        Bonus bonus1 = new Bonus(123, "AKUBAHAGIA123", 20000, 30000, true);
-        EwalletPayment inv1 = new EwalletPayment(1, job1, "1 April 2021", jobseeker1, bonus1, InvoiceStatus.OnGoing);
-        EwalletPayment inv2 = new EwalletPayment(2, job1, "1 April 2021", jobseeker1, bonus1, InvoiceStatus.Finished);
-        EwalletPayment inv3 = new EwalletPayment(3, job2, "2 April 2021", jobseeker1, bonus1, InvoiceStatus.OnGoing);  
+        BankPayment bank1 = new BankPayment(1, job1, "3 April 2021", jobseeker1, InvoiceStatus.Finished, 0);
+        BankPayment bank2 = new BankPayment(2, job1, "3 April 2021", jobseeker1, InvoiceStatus.Finished, 12);
+
+        bank1.printData();
+        bank2.printData();
         
-        inv1.printData();
-        inv2.printData();
-        inv3.printData();
+        
+        //Bonus bonus1 = new Bonus(123, "AKUBAHAGIA123", 20000, 30000, true);
+        //EwalletPayment inv1 = new EwalletPayment(1, job1, "1 April 2021", jobseeker1, bonus1, InvoiceStatus.OnGoing);
+        //EwalletPayment inv2 = new EwalletPayment(2, job1, "1 April 2021", jobseeker1, bonus1, InvoiceStatus.Finished);
+        //EwalletPayment inv3 = new EwalletPayment(3, job2, "2 April 2021", jobseeker1, bonus1, InvoiceStatus.OnGoing);  
+        
+        //inv1.printData();
+        //inv2.printData();
+        //inv3.printData();
     }
 }
