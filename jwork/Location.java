@@ -76,12 +76,8 @@ public class Location
     {
         this.description = description;
     }
-    /**
-       * method ini digunakan untuk melakukan output tulisan yang merujuk pada provinsi
-       * @param getProvince 
-       */
-    public void printData()
-    {
-        System.out.println(getProvince());
+    @Override
+    public String toString() {
+        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }

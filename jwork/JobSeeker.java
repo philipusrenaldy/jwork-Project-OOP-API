@@ -1,8 +1,14 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Write a description of class JWork here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (18 - 3 - 2021)
+ * @version (8 - 4 - 2021)
  */
 public class Jobseeker
 {
@@ -11,7 +17,7 @@ public class Jobseeker
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    private Calendar joinDate;
 
     /**
      * Constructor for objects of class Jobseeker
@@ -21,13 +27,28 @@ public class Jobseeker
      * @param phoneNumber berisi data password pendaftar
      * @param location berisi data waktu pendaftar
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = joinDate;
+    }
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+    public Jobseeker(int id, String name, String email, String password)
+    {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
     }
 
     /**
@@ -37,7 +58,7 @@ public class Jobseeker
        */
     public int getId()
     {
-        return this.id;
+        return id;
     }
     /**
        * method ini digunakan untuk mengambil data nama pendaftar
@@ -46,7 +67,7 @@ public class Jobseeker
        */
     public String getName()
     {
-        return this.name;
+        return name;
     }
     /**
        * method ini digunakan untuk mengambil data email pendaftar
@@ -55,7 +76,7 @@ public class Jobseeker
        */
     public String getEmail()
     {
-        return this.email;
+        return email;
     }
     /**
        * method ini digunakan untuk mengambil data password pendaftar
@@ -64,16 +85,16 @@ public class Jobseeker
        */
     public String getPassword()
     {
-        return this.password;
+        return password;
     }
     /**
        * method ini digunakan untuk mengambil data waktu pendaftar
        * @param joinDate
        * @return void
        */
-     public String getJoinDate()
+     public Calendar getJoinDate()
     {
-        return this.joinDate;
+        return joinDate;
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada id pendaftar
@@ -97,7 +118,17 @@ public class Jobseeker
        */
     public void setEmail(String email)
     {
-        this.email = email;
+        String emailregex = "^[a-zA-Z0-9&*_~]+([\\.{1}]?[a-z]+)+@[a-z0-9]+([\\.]{1}[a-z]+)\\S+(?!.*?\\.\\.)";
+        Pattern pattern = Pattern.compile(emailregex);
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches())
+        {
+          this.email = email;
+        }
+        else
+        {
+            this.email = "";
+        }
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada password pendaftar
@@ -105,22 +136,51 @@ public class Jobseeker
        */
     public void setPassword(String password)
     {
-        this.password = password;
+        String passregex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$";
+        Pattern pattern = Pattern.compile(passregex);
+        Matcher matcher = pattern.matcher(password);
+        if(matcher.matches())
+        {
+            this.password = password;
+        }
+        else
+        {
+            this.password = "";
+        }
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada waktu pendaftar
        * @param joinDate
        */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate = joinDate;
+    }
+    /**
+       * method ini digunakan untuk melakukan set nilai pada waktu pendaftar
+       * @param joinDate
+       */
+    public void setJoinDate(int year, int month, int dayOfMonth)
+    {
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
     /**
        * method ini digunakan untuk melakukan output tulisan yang merujuk pada nama pendaftar
        * @param getName 
        */
-    public void printData()
+    @Override
+    public String toString()
     {
-        System.out.println(getName());
+        if (this.joinDate == null)
+        {
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() +"\n";
+        }
+        else
+        {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd MMMM yyyy");
+            String date = formattedDate.format(getJoinDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() + "\nJoin Date = " + date + "\n";
+        }
     }
+
 }

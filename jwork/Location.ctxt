@@ -23,6 +23,5 @@ comment7.params=description
 comment7.target=void\ setDescription(java.lang.String)
 comment7.text=\r\n\ method\ ini\ digunakan\ untuk\ melakukan\ set\ nilai\ pada\ deskripsi\ kota\r\n\ @param\ desciption\ \r\n
 comment8.params=
-comment8.target=void\ printData()
-comment8.text=\r\n\ method\ ini\ digunakan\ untuk\ melakukan\ output\ tulisan\ yang\ merujuk\ pada\ provinsi\r\n\ @param\ getProvince\ \r\n
+comment8.target=java.lang.String\ toString()
 numComments=9

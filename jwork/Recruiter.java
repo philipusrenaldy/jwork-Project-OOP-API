@@ -116,12 +116,8 @@ public class Recruiter
     {
         this.location = location;
     }
-    /**
-       * method ini digunakan untuk melakukan output tulisan yang merujuk pada nama penguji
-       * @param getName 
-       */
-    public void printData() 
-    {
-        System.out.println(getName());
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPhone Number = " + getPhoneNumber() + "\nLocation = " + getLocation();
     }
 }

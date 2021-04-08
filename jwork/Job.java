@@ -115,14 +115,9 @@ public class Job
     {
         this.category = category;
     }
-    public void printData()
-    {
-        System.out.println("===================== JOB =====================");
-        System.out.print("ID: " + id + " \n");
-        System.out.print("Name: " + name + " \n");
-        System.out.print("Recruiter: " + recruiter.getName() + " \n");
-        System.out.print("City: " + recruiter.getLocation().getCity() + " \n");
-        System.out.print("Fee: " + fee + " \n");
-        System.out.print("Category: " + category + " \n");
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= " + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
+
     }
 }
