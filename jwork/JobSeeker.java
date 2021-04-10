@@ -162,7 +162,7 @@ public class Jobseeker
        */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
-        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+        this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
     }
     /**
        * method ini digunakan untuk melakukan output tulisan yang merujuk pada nama pendaftar

@@ -1,16 +1,18 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Write a description of class JWork here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (1 - 4 - 2021)
+ * @version (10 - 4 - 2021)
  */
 public abstract class Invoice
 {
     // instance variables dari class Invoice
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
@@ -23,11 +25,10 @@ public abstract class Invoice
      * @param totalFee berisi data harga invoice
      * @param jobseeker merujuk pada list jobseeker
      */
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id;
         this.job = job;
-        this.date = date;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
     }
@@ -54,7 +55,7 @@ public abstract class Invoice
        * @param date 
        * @return void
        */
-    public String getDate()
+    public Calendar getDate()
     {
         return date;
     }
@@ -111,9 +112,13 @@ public abstract class Invoice
        * method ini digunakan untuk melakukan set nilai pada waktu invoice
        * @param date 
        */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
-        this.date = date;
+        this.date = Calendar.getInstance();
+    }
+    public void setDate(int year, int month, int dayOfMonth)
+    {
+        this.date = new GregorianCalendar(year, month-1, dayOfMonth);
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada total fee invoice
@@ -136,5 +141,5 @@ public abstract class Invoice
     {
        this.invoiceStatus = invoiceStatus;
     }
-    public abstract void printData();
+    public abstract String toString();
 }
