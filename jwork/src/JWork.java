@@ -27,7 +27,7 @@ public class JWork
         //System.out.println(jobseeker1);
         
         Location location1 = new Location("Jawa Barat", "Kota Bekasi", "Bekasi Utara");
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Kenny", "mtimotik@gmail.com", "mantab500", location1));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Kenny", "mtimotik@gmail.com", "081297204160", location1));
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 04, 22));
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 2, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 04 ,22));
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 3, "Hansaka", "hansaka.wijaya@ui.ac.id", "HansakaK3", 2021, 04, 20));
