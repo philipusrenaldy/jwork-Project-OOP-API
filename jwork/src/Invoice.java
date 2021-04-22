@@ -1,21 +1,21 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
+import java.util.ArrayList;
 /**
  * Write a description of class JWork here.
  *
  * @author (Philipus Kristian Renaldy)
- * @version (10 - 4 - 2021)
+ * @version (22 - 4 - 2021)
  */
 public abstract class Invoice
 {
     // instance variables dari class Invoice
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
-    private InvoiceStatus invoiceStatus;
+    private InvoiceStatus InvoiceStatus;
 
     /**
      * Constructor for objects of class Invoice
@@ -25,13 +25,12 @@ public abstract class Invoice
      * @param totalFee berisi data harga invoice
      * @param jobseeker merujuk pada list jobseeker
      */
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
-        this.date = Calendar.getInstance();
+        this.jobs = jobs;
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
     
     /**
@@ -48,8 +47,8 @@ public abstract class Invoice
        * @param job 
        * @return void
        */
-    public Job getJob(){
-        return job;
+    public ArrayList<Job> getJobs(){
+        return jobs;
     }
     /**
        * method ini digunakan untuk mengambil data date invoice
@@ -82,7 +81,7 @@ public abstract class Invoice
         */
     public InvoiceStatus getInvoiceStatus() 
     {
-        return invoiceStatus;
+        return InvoiceStatus;
     }
     /**
        * method ini digunakan untuk mengambil data jobseeker invoice
@@ -105,9 +104,9 @@ public abstract class Invoice
        * method ini digunakan untuk melakukan set nilai pada idjob invoice
        * @param idJob
        */
-    public void setJob(Job job) 
+    public void setJob(ArrayList<Job> jobs)
     {
-        this.job = job;
+        this.jobs = jobs;
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada waktu invoice
@@ -138,9 +137,9 @@ public abstract class Invoice
         * method ini digunakan untuk melakukan set nilai pada jobseeker invoice
         * @param InvoiceStatus
         */
-    public void setInvoiceStatus(InvoiceStatus status) 
+    public void setInvoiceStatus(InvoiceStatus InvoiceStatus) 
     {
-       this.invoiceStatus = invoiceStatus;
+       this.InvoiceStatus = InvoiceStatus;
     }
     public abstract String toString();
 }
