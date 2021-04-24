@@ -31,8 +31,12 @@ public class JWork
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 04, 22));
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 2, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 04 ,22));
         DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 3, "Hansaka", "hansaka.wijaya@ui.ac.id", "HansakaK3", 2021, 04, 20));
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "AKUBAHAGIA123", 20000, 30000, false));
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 2, "AKUBAHAGIA123", 15000, 50000, true));
         System.out.println("\n==================== JobSeeker ====================");
         System.out.println(DatabaseJobSeeker.getJobDatabase());
+        System.out.println("\n==================== Bonus ====================");
+        System.out.println(DatabaseBonus.getBonusDatabase());
         DatabaseJob.addJob(new Job(1, "Backend Engineer 1", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
         DatabaseJob.addJob(new Job(1, "Backend Engineer 2", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd));
         DatabaseJob.addJob(new Job(1, "Frontend Engineer 1", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));

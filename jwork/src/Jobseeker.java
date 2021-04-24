@@ -24,8 +24,6 @@ public class Jobseeker
      * @param id berisi data id pendaftar
      * @param name berisi data nama pendaftar
      * @param email berisi data email pendaftar
-     * @param phoneNumber berisi data password pendaftar
-     * @param location berisi data waktu pendaftar
      */
     public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
@@ -53,7 +51,6 @@ public class Jobseeker
 
     /**
        * method ini digunakan untuk mengambil data id pendaftar
-       * @param id 
        * @return void
        */
     public int getId()
@@ -62,7 +59,6 @@ public class Jobseeker
     }
     /**
        * method ini digunakan untuk mengambil data nama pendaftar
-       * @param name 
        * @return void
        */
     public String getName()
@@ -71,7 +67,6 @@ public class Jobseeker
     }
     /**
        * method ini digunakan untuk mengambil data email pendaftar
-       * @param email 
        * @return void
        */
     public String getEmail()
@@ -80,7 +75,6 @@ public class Jobseeker
     }
     /**
        * method ini digunakan untuk mengambil data password pendaftar
-       * @param password 
        * @return void
        */
     public String getPassword()
@@ -89,7 +83,6 @@ public class Jobseeker
     }
     /**
        * method ini digunakan untuk mengambil data waktu pendaftar
-       * @param joinDate
        * @return void
        */
      public Calendar getJoinDate()
@@ -158,28 +151,25 @@ public class Jobseeker
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada waktu pendaftar
-       * @param joinDate
+       * @param year, month, dayOfMonth
        */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
         this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
     }
-    /**
-       * method ini digunakan untuk melakukan output tulisan yang merujuk pada nama pendaftar
-       * @param getName 
-       */
+
     @Override
     public String toString()
     {
         if (this.joinDate == null)
         {
-            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() +"\n";
+            return "\nId = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() +"\n";
         }
         else
         {
             SimpleDateFormat formattedDate = new SimpleDateFormat("dd MMMM yyyy");
             String date = formattedDate.format(getJoinDate().getTime());
-            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() + "\nJoin Date = " + date + "\n";
+            return "\nId = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() + "\nJoin Date = " + date + "\n";
         }
     }
 

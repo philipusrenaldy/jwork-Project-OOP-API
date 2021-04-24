@@ -35,7 +35,7 @@ public class DatabaseRecruiter
     
     /**
      * method menghapus recruiter
-     * @param recruiter
+     * @param id
      * @return boolean
      */
     public static boolean removeRecruiter(int id)

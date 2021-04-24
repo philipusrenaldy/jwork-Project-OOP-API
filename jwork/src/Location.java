@@ -27,7 +27,6 @@ public class Location
 
     /**
        * method ini digunakan untuk mengambil data provinsi
-       * @param province 
        * @return void
        */
     public String getProvince()
@@ -36,7 +35,6 @@ public class Location
     }
     /**
        * method ini digunakan untuk mengambil data kota
-       * @param city 
        * @return void
        */
     public String getCity()
@@ -45,7 +43,6 @@ public class Location
     }
     /**
        * method ini digunakan untuk mengambil data deskripsi kota
-       * @param city 
        * @return void
        */
     public String getDescription()
@@ -70,7 +67,7 @@ public class Location
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada deskripsi kota
-       * @param desciption 
+       * @param description
        */
     public void setDescription(String description)
     {
@@ -78,6 +75,6 @@ public class Location
     }
     @Override
     public String toString() {
-        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
+        return "\nProvince = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }

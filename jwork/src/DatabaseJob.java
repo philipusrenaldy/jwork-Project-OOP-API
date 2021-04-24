@@ -1,9 +1,3 @@
-/**
- * @Author: Your name
- * @Date:   2021-04-21 15:02:42
- * @Last Modified by:   Your name
- * @Last Modified time: 2021-04-22 16:46:47
- */
 import java.util.ArrayList;
 /**
  * Write a description of class DatabaseJob here.
@@ -18,7 +12,7 @@ public class DatabaseJob {
     
     /**
      * method ini digunakan untuk mengisi data job
-     * @param listjob berisi total Job
+     * @param job berisi total Job
      * @return false
      */    
     public static boolean addJob(Job job)
@@ -29,7 +23,7 @@ public class DatabaseJob {
     }
     /**
      * method ini digunakan untuk menghapus data job
-     * @param listJob berisi total Job
+     * @param job berisi total Job
      * @return false
      */    
     public static boolean remove(Job job)
@@ -44,7 +38,6 @@ public class DatabaseJob {
     }
     /**
        * method ini digunakan untuk mengambil data job
-       * @param job 
        * @return null
        */
     public static ArrayList<Job> getJobDatabase()
@@ -56,7 +49,7 @@ public class DatabaseJob {
     }
     /**
        * method ini digunakan untuk mengambil data joblist
-       * @param listJob
+       * @param id
        * @return void
        */
     public static Job getJobById(int id){

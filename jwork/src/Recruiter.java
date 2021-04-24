@@ -33,7 +33,6 @@ public class Recruiter
 
     /**
        * method ini digunakan untuk mengambil data id penguji
-       * @param id 
        * @return void
        */
     public int getId()
@@ -42,7 +41,6 @@ public class Recruiter
     }
     /**
        * method ini digunakan untuk mengambil data nama penguji
-       * @param name 
        * @return void
        */
     public String getName()
@@ -51,7 +49,6 @@ public class Recruiter
     }   
     /**
        * method ini digunakan untuk mengambil data email penguji
-       * @param email 
        * @return void
        */
     public String getEmail()
@@ -60,7 +57,6 @@ public class Recruiter
     }
     /**
        * method ini digunakan untuk mengambil data nomor telepon penguji
-       * @param phoneNumber 
        * @return void
        */
     public String getPhoneNumber()
@@ -69,7 +65,6 @@ public class Recruiter
     }
     /**
        * method ini digunakan untuk mengambil data lokasi penguji
-       * @param location 
        * @return void
        */
     public Location getLocation()

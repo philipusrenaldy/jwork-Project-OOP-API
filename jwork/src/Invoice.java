@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.ArrayList;
 /**
- * Write a description of class JWork here.
+ * Write a description of class Invoice here.
  *
  * @author (Philipus Kristian Renaldy)
  * @version (22 - 4 - 2021)
@@ -20,9 +20,7 @@ public abstract class Invoice
     /**
      * Constructor for objects of class Invoice
      * @param id berisi data id invoice
-     * @param idJob berisi data idJob invoice
-     * @param date berisi data waktu invoice
-     * @param totalFee berisi data harga invoice
+     * @param jobs berisi data idJob invoice
      * @param jobseeker merujuk pada list jobseeker
      */
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
@@ -35,7 +33,6 @@ public abstract class Invoice
     
     /**
        * method ini digunakan untuk mengambil data id invoice
-       * @param id 
        * @return void
        */
     public int getId()
@@ -44,7 +41,6 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk mengambil data idjob invoice
-       * @param job 
        * @return void
        */
     public ArrayList<Job> getJobs(){
@@ -52,7 +48,6 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk mengambil data date invoice
-       * @param date 
        * @return void
        */
     public Calendar getDate()
@@ -61,7 +56,6 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk mengambil data total fee invoice
-       * @param totalFee 
        * @return void
        */
     public int getTotalFee()
@@ -70,13 +64,11 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk mengambil data jobseeker invoice
-       * @param PaymentType 
        * @return void
        */
     public abstract PaymentType getPaymentType();
     /**
        * method ini digunakan untuk mengambil data jobseeker invoice
-       * @param InvoiceStatus 
        * @return void
         */
     public InvoiceStatus getInvoiceStatus() 
@@ -85,7 +77,6 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk mengambil data jobseeker invoice
-       * @param Jobseeker 
        * @return void
        */
     public Jobseeker getJobseeker() 
@@ -102,7 +93,7 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada idjob invoice
-       * @param idJob
+       * @param jobs
        */
     public void setJob(ArrayList<Job> jobs)
     {
@@ -110,7 +101,7 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada waktu invoice
-       * @param date 
+       * @param date
        */
     public void setDate(Calendar date)
     {
@@ -122,12 +113,11 @@ public abstract class Invoice
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada total fee invoice
-       * @param totalFee
-       */
+     */
     public abstract void setTotalFee();
     /**
        * method ini digunakan untuk melakukan set nilai pada jobseeker invoice
-       * @param Jobseeker
+       * @param jobseeker
        */
     public void setJobseeker(Jobseeker jobseeker) 
     {

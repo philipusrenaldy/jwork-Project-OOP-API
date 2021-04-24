@@ -19,7 +19,7 @@ public class Job
      * @param name berisi data nama job
      * @param fee berisi data fee job
      * @param category berisi data kategori job
-     * @param Recruiter merujuk pada list Recruiter
+     * @param recruiter merujuk pada list Recruiter
      */
     public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
@@ -32,7 +32,6 @@ public class Job
     
     /**
        * method ini digunakan untuk mengambil data id job
-       * @param id 
        * @return void
        */
     public int getId()
@@ -41,7 +40,6 @@ public class Job
     }
     /**
        * method ini digunakan untuk mengambil data nama job
-       * @param name 
        * @return void
        */
     public String getName()
@@ -50,7 +48,6 @@ public class Job
     }
     /**
        * method ini digunakan untuk mengambil data fee job
-       * @param fee 
        * @return void
        */
     public int getFee()
@@ -59,7 +56,6 @@ public class Job
     }
     /**
        * method ini digunakan untuk mengambil data kategori job
-       * @param category 
        * @return void
        */
     public JobCategory getCategory()
@@ -68,7 +64,6 @@ public class Job
     }
     /**
        * method ini digunakan untuk mengambil data recruiter
-       * @param recruiter 
        * @return void
        */
     public Recruiter getRecruiter()
@@ -77,7 +72,7 @@ public class Job
     }
     /**
        * method ini digunakan untuk melakukan set nilai pada id job
-       * @param id 
+       * @param id
        */
     public void setId(int id)
     {
@@ -117,7 +112,7 @@ public class Job
     }
     @Override
     public String toString() {
-        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= " + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
+        return "\nId = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= " + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
 
     }
 }
