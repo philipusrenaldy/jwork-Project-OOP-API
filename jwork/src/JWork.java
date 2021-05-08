@@ -1,5 +1,6 @@
 //import java.util.GregorianCalendar;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 /**
@@ -83,17 +84,12 @@ public class JWork {
         }
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(10, job1, DatabaseJobSeeker.getJobseekerById(1)));
-        } catch (JobSeekerNotFoundException e) {
+        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(11, job2, DatabaseJobSeeker.getJobseekerById(2)));
-        } catch (JobSeekerNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-        try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(12, job1, DatabaseJobSeeker.getJobseekerById(3)));
-        } catch (JobSeekerNotFoundException e) {
+        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 
