@@ -7,6 +7,6 @@ public class InvoiceNotFoundException extends Exception {
     }
 
     public String getMessage() {
-        return super.getMessage() + invoice_error + " Not OnGoing";
+        return super.getMessage() + invoice_error + " Not Found";
     }
 }

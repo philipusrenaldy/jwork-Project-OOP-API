@@ -16,10 +16,6 @@ public class JWork {
         DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Kenny", "mtimotik@gmail.com", "081297204160", location1));
         try {
             DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 4, 22));
-        } catch (EmailAlreadyExistsException e) {
-            System.out.println(e.getMessage());
-        }
-        try {
             DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Philipus", "philipus.kristian@ui.ac.id", "PhilipusK2", 2021, 4, 22));
         } catch (EmailAlreadyExistsException e) {
             System.out.println(e.getMessage());
@@ -27,19 +23,15 @@ public class JWork {
         try {
             DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Mikael", "mtimotik@gmail.com", "Mantab500", 2021, 4, 20));
         } catch (EmailAlreadyExistsException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         try {
             DatabaseJobSeeker.addJobseeker(new Jobseeker(DatabaseJobSeeker.getLastId() + 1, "Hansaka", "hansaka.wijaya@ui.ac.id", "HansakaK3", 2021, 4, 20));
         } catch (EmailAlreadyExistsException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         try {
             DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "AKUBAHAGIA123", 20000, 30000, false));
-        } catch (ReferralCodeAlreadyExistsException e) {
-            System.out.println(e.getMessage());
-        }
-        try {
             DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "AKUBAHAGIA123", 15000, 50000, true));
         } catch (ReferralCodeAlreadyExistsException e) {
             System.out.println(e.getMessage());
@@ -74,27 +66,28 @@ public class JWork {
         ArrayList<Job> job2 = new ArrayList<Job>();
         try {
             job1.add(new Job(1, "Backend Engineer 1", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
-        } catch (RecruiterNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-        try {
             job2.add(new Job(2, "Backend Engineer 2", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd));
         } catch (RecruiterNotFoundException e) {
             System.out.println(e.getMessage());
         }
         try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(10, job1, DatabaseJobSeeker.getJobseekerById(1)));
-        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
-            System.out.println(e.getMessage());
-        }
-        try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(11, job2, DatabaseJobSeeker.getJobseekerById(2)));
-        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+            DatabaseInvoice.addInvoice(new EwalletPayment(DatabaseInvoice.getLastId()+1, job1, DatabaseJobSeeker.getJobseekerById(1)));
+            DatabaseInvoice.addInvoice(new EwalletPayment(DatabaseInvoice.getLastId()+1, job2, DatabaseJobSeeker.getJobseekerById(1), DatabaseBonus.getBonusById(1)));
+        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException | BonusNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
         for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
             new Thread(new FeeCalculator(invoice)).start();
+        }
+
+        System.out.println("\n==================== Database Invoice ====================");
+        System.out.println(DatabaseInvoice.getInvoiceDatabase());
+
+        try {
+            DatabaseInvoice.getInvoiceById(1);
+        } catch (InvoiceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
 
         //System.out.println("\n==================== JobSeeker by Category ====================");
