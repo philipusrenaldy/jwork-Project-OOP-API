@@ -79,12 +79,13 @@ public class DatabaseJob {
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId) {
-        ArrayList<Job> temp = new ArrayList<Job>();
+        ArrayList<Job> temp = null;
         for (Job job : JOB_DATABASE) {
             if (recruiterId == job.getRecruiter().getId()) {
+                if (temp == null) {
+                    temp = new ArrayList<Job>();
+                }
                 temp.add(job);
-            } else {
-                return null;
             }
         }
         return temp;
