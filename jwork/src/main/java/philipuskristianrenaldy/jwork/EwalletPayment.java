@@ -15,7 +15,7 @@ public class EwalletPayment extends Invoice
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
 
     /**
-     * Constructor for objects of class EwalletPaymentio
+     * Constructor for objects of class EwalletPayment
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {

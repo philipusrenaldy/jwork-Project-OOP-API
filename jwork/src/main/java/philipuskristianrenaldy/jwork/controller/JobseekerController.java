@@ -3,6 +3,8 @@ package philipuskristianrenaldy.jwork.controller;
 import philipuskristianrenaldy.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
+import static philipuskristianrenaldy.jwork.DatabaseJobseekerPostgre.getJobseekerLogin;
+
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
@@ -16,8 +18,8 @@ public class JobseekerController {
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
         try {
-            jobseeker = DatabaseJobSeeker.getJobseekerById(id);
-        } catch (JobSeekerNotFoundException e) {
+            jobseeker = DatabaseJobseekerPostgre.getJobseekerById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -28,10 +30,10 @@ public class JobseekerController {
     public Jobseeker registerJobseeker(@RequestParam(value = "name") String name,
                                        @RequestParam(value = "email") String email,
                                        @RequestParam(value = "password") String password) {
-        Jobseeker jobseeker = new Jobseeker(DatabaseJobSeeker.getLastId() + 1, name, email, password);
+        Jobseeker jobseeker = new Jobseeker(DatabaseJobseekerPostgre.getLastId() + 1, name, email, password);
         try {
-            DatabaseJobSeeker.addJobseeker(jobseeker);
-        } catch (EmailAlreadyExistsException e) {
+            DatabaseJobseekerPostgre.addJobseeker(jobseeker);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -41,7 +43,7 @@ public class JobseekerController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Jobseeker loginJobseeker(@RequestParam(value = "email") String email,
                                     @RequestParam(value = "password") String password) {
-        return (DatabaseJobSeeker.getJobseekerLogin(email, password));
+        return (getJobseekerLogin(email, password));
     }
 
 }

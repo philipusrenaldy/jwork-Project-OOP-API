@@ -35,10 +35,10 @@ public class DatabaseBonus {
         return x;
     }
 
-    public static Bonus getBonusByRefferalCode(String refferalCode) {
+    public static Bonus getBonusByReferralCode(String referralCode) {
         Bonus x = null;
         for (Bonus bonus : BONUS_DATABASE) {
-            if (refferalCode.equals(bonus.getReferralCode())) {
+            if (referralCode.equals(bonus.getReferralCode())) {
                 x = bonus;
             }
         }

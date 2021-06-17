@@ -13,7 +13,7 @@ public class BankPayment extends Invoice
 {
     // instance variables - replace the example below with your own
     private int adminFee;
-    private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
+    private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
 
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
